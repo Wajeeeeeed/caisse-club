@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caisse du Club</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-screen">
+    <h2>Accès réservé</h2>
+    <input type="password" id="code" placeholder="Entrez le code secret" />
+    <button onclick="checkCode()">Entrer</button>
+    <p id="error-msg" style="color: red;"></p>
+  </div>
+
+  <div id="site-content" style="display:none;">
+    <div class="container">
+      <h1>Caisse du Club</h1>
+
+      <div class="summary">
+        <p>💰 Revenus : <span id="total-income">0</span> D</p>
+        <p>🧾 Dépenses : <span id="total-expense">0</span> D</p>
+        <p>📊 Solde : <span id="balance">0</span> D</p>
+        <p id="warning" class="warning"></p>
+      </div>
+
+      <form id="transaction-form">
+        <input type="text" id="description" placeholder="Description" required />
+        <input type="number" id="amount" placeholder="Montant (D)" required />
+        <select id="type">
+          <option value="income">Revenu</option>
+          <option value="expense">Dépense</option>
+        </select>
+        <button type="submit">Ajouter</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Montant</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-table">
+          <!-- Transactions -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
